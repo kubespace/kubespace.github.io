@@ -2,161 +2,277 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <script src="https://unpkg.com/vue@next"></script>
+    <!-- <script src="https://unpkg.com/vue@next"></script> -->
     <!-- import CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/element-plus/dist/index.css">
-    <!-- import JavaScript -->
-    <script src="https://unpkg.com/element-plus"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <link rel="icon" href="./favicon.ico">
-    <title>OpenSpace</title>
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <title>KubeSpace</title>
   </head>
   <body>
-    <div id="app" style="margin: 0 190px">
-      <div style="margin: 20px 0px;">
-        <el-row>
-          <el-col :span="4">
-            <el-link :underline="false" href="https://github.com/openspacee/osp">
-              <span class="navbar-title">OpenSpace</span>
-            </el-link>
-          </el-col>
-          <el-col :span="3">
-            <span class="github-svg">
-              <a href="https://github.com/openspacee/osp" target='_blank'>
-                <svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeLarge" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.9 1.2 1.9 1.2 1 1.8 2.8 1.3 3.5 1 0-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6 0-3.2 0 0 1-.3 3.4 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8 0 3.2.9.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.6-5.5 5.9.5.4.9 1 .9 2.2v3.3c0 .3.1.7.8.6A12 12 0 0 0 12 .3">
-                  </path>
-                </svg>
-              </a>
-            </span>
-          </el-col>
-        </el-row>
-        
-      </div>
-      <!-- <el-divider></el-divider> -->
-      <div>
-        <el-card class="box-card">
-          <el-row>
-            <el-col :span="12">
+    <div id="app" >
+      <section class="section-class">
+        <div class="center">
+          <h2 style="font-size: 48px; font-weight: 400;">KubeSpace</h2>
+          <p class="center-content">最好用的DevOps Kubernetes多集群管理平台</p>
+        </div>
+        <!-- <div class="bottom-down">
+          <i class="el-icon-arrow-down bottom-down-i"></i>
+          <el-icon class="bottom-down-i">
+            <delete />
+          </el-icon>
+        </div> -->
+      </section>
+      <header class="nav">
+        <a class="title">
+          <span style="display:inline-block;vertical-align: middle;margin-top: -4px;">KubeSpace</span>
+        </a>
 
-              <div style="margin: 130px 0px; font-size: 22px;">
-                <el-row>
-                  <el-col :span="6"></el-col>
-                  <el-col :span="12">
-                    <span>开源</span>
-                    <el-divider direction="vertical"></el-divider>
-                    <span>多云</span>
-                    <el-divider direction="vertical"></el-divider>
-                    <span>权限</span>
-                    <el-divider direction="vertical"></el-divider>
-                    <span>应用</span>
-                  </el-col>
+        <ul class="nav-ul">
+          <li class="nav-ul-li" >
+            <a class="nav-ul-li-link">
+              GitHub
+            </a>
+          </li>
+          <li class="nav-ul-li">
+            <a class="nav-ul-li-link">文档</a>
+          </li>
+          <li class="nav-ul-li">
+            <a class="nav-ul-li-link">联系我们</a>
+          </li>
+        </ul>
+      </header>
 
-                </el-row>
-              </div>
-            </el-col>
-            <el-col :span="12">
-              <h1 class="head-content-area">
-                多Kubernetes管理平台
-              </h1>
-              <div class="">
-                OpenSpace是一个用来管理多Kubernetes集群的开源项目。OpenSpace可以兼容不同云厂商的Kubernetes集群，极大的方便了集群的管理工作。
-              </div>
-              <el-row style="margin-top: 6px;">
-                <el-col :span="11">
-                  <div style=" margin: 10px 40px 0px 90px;">
-                    <div>
-                      <img style="width: 86px; height: 86px;" src="./images/qqgroup.jpg" />
-                    </div>
-                    <span style="font-size: 13px;">
-                      加入QQ群交流
-                    </span>
-                  </div>
-                </el-col>
-                <el-col :span="11">
-                  <div style="margin-top: 40px;">
-                  <span>
-                    如有定制化需求，请联系<br/>
-                    QQ: 744232154
-                  </span>
-                  </div>
+      <section class="content">
+        <div class="content-table">
+          <el-table
+            ref="singleTable"
+            :data="tableData"
+            highlight-current-row
+            style="width: 100%">
+            <el-table-column
+              property="date"
+              label="功能"
+              min-width="30">
+            </el-table-column>
+            <el-table-column
+              property="name"
+              label="开源版"
+              min-width="30">
+              <template slot-scope="scope">
+                <div>
+                  <i class="el-icon-check" style="color: #409EFF; font-size: 18px; font-weight: 600;" v-if="scope.row.name"></i>
+                  <i class="el-icon-close" style="color: #F56C6C; font-size: 18px; font-weight: 600;" v-else></i>
+                </div>
+              </template>
+            </el-table-column>
+            <el-table-column
+              property="address"
+              label="企业版"
+              min-width="10">
 
-                </el-col>
-              </el-row>
-            </el-col>
-          </el-row>
-        </el-card>
-      </div>
+              <template slot-scope="scope">
+                <i class="el-icon-check" style="color: #409EFF; font-size: 18px; font-weight: 600;" v-if="scope.row.address"></i>
+                <i class="el-icon-close" style="color: #F56C6C; font-size: 18px; font-weight: 600;" v-else></i>
+              </template>
+            </el-table-column>
+          </el-table>
+        </div>
+      </section>
+
     </div>
     <script>
-      const App = {
-        data() {
-          return {
-            message: "Hello Element Plus",
-          };
-        },
-      };
-      const app = Vue.createApp(App);
-      app.use(ElementPlus);
-      app.mount("#app");
+      new Vue({
+        el: '#app',
+        data: function() {
+          return { 
+            tableData: [{
+              date: '集群管理',
+              name: true,
+              address: true
+            }, {
+              date: '流水线',
+              name: true,
+              address: true
+            }, {
+              date: '项目管理',
+              name: true,
+              address: true
+            }, {
+              date: '应用商店',
+              name: true,
+              address: true
+            }, {
+              date: '权限管理',
+              name: true,
+              address: true
+            }, {
+              date: 'LDAP',
+              name: false,
+              address: true
+            }, {
+              date: '日志',
+              name: false,
+              address: true
+            }, {
+              date: '监控',
+              name: false,
+              address: true
+            }],
+          }
+        }
+      })
     </script>
     <style>
-    .navbar-title {
-      margin: 0px 0px 0px 10px;
-      font-weight: 500;
-      font-size: 30px;
-      font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
-    }
-    .github-svg {
-      width: 26px;
-      height: 26px;
-      margin-top: 8px;
-      margin-left: 10px;
-      display: inline-block;
-    }
-    .el-divider--horizontal{
-      margin: 13px 0px;
-    }
-    .el-col-4{
-      width: 200px;
-      max-width: 235px;
-    }
-    .el-link.el-link--default{
-      color: black;
-    }
-    .el-link.el-link--default:hover {
-      color: black;
-    }
-    .head-content-area{
-      font-weight: 500;
-      line-height: 64px;
-      font-size: 2.75rem;
-      font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
-    }
-    .head-description {
-      font-size: 18px;
-      line-height: 32px;
-    }
-    .box-card{
-      padding-bottom: 50px;
-      height: 300px;
-    }
+      body {
+        margin: 0;
+      }
+      .section-class {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+        background-color: #fbfbfb;
+        z-index: 20;
+        border-bottom: solid 1px #ddd;
+        height: 100vh;
+        position: relative;
+      }
 
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      /* min-height: 80vh; */
-      margin: 0 0 150px;
-    }
+      .center {
+        position: absolute;
+        width: 100%;
+        /* padding-top: 70px;   */
+        top: 200px;
+        min-height: 200px;
+      }
 
-    :root {
-      --white-grad-1: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
-    }
+      .bottom-down {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        color: #4d4d4d;
+        cursor: pointer;
+        height: 32px;
+        font-size: 18px;
+      }
 
-    .bg-white-grad-1 {
-      background: var(--white-grad-1);
-    }
+      .bottom-down-i {
+        -webkit-animation: pulse 1.5s infinite;
+        animation: pulse 1.5s infinite;
+        font-size: 28px;
+        position: absolute;
+        color: black;
+        display: inline-block;
+        /* font: normal normal normal 14px/1 FontAwesome; */
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+      }
 
+      .center-content {
+        font-family: raleway,century gothic,texgyreadventor,sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        color: #999;
+        text-align: center;
+      }
+
+      .nav {
+        position: fixed;
+        width: 100%;
+        top: 0;
+        height: 70px;
+        padding-top: 15px;
+        z-index: 10;
+        background-color: #fff;
+        border-bottom: 1px solid #eee;
+        white-space: nowrap;
+        box-sizing: border-box;
+      }
+
+      .title {
+        /* margin-top: -8px; */
+        padding-left: 16px;
+        display: block;
+        color: #555;
+        float: left;
+        font-size: 2em;
+      }
+
+      .content {
+        padding-top: 100px;
+        /* min-height: 500px; */
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        padding-bottom: 50px
+      }
+
+      .content-table {
+        padding-top: 100px;
+        /* min-height: 500px; */
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        padding-bottom: 200px;
+        padding: 100px 200px 200px;
+      }
+
+      .nav-ul {
+        float: right;
+        list-style: none;
+        display: inline-block;
+        max-width: 100%;
+        overflow-x: hidden;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        margin: 0 1em 0 0 ;
+        padding: 0;
+        position: relative;
+      }
+
+      .nav-ul-li {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        height: 100%;
+        display: inline-block;
+        zoom: 1;
+        vertical-align: middle;
+      }
+
+      .nav-ul-li-link {
+        /* background-color: #eee; */
+        padding: 0.5em 1em;
+        color: #777;
+        display: block;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      .el-table td.el-table__cell {
+        border-bottom: 0;
+      }
+
+      .el-table::before {
+        height: 0;
+      }
+
+      .github-svg {
+        width: 23px;
+        height: 23px;
+        margin-top: 8px;
+        margin-left: 10px;
+        display: inline-block;
+      }
 
     </style>
   </body>
