@@ -46,7 +46,9 @@
       </header>
 
       <section class="content">
+
         <div class="content-table">
+          <el-card class="box-card">
           <el-table
             ref="singleTable"
             :data="tableData"
@@ -79,6 +81,7 @@
               </template>
             </el-table-column>
           </el-table>
+          </el-card>
         </div>
       </section>
 
@@ -215,13 +218,12 @@
       }
 
       .content-table {
-        padding-top: 100px;
         /* min-height: 500px; */
         left: 0;
         right: 0;
         background-color: #fff;
-        padding-bottom: 200px;
-        padding: 100px 200px 200px;
+        /* padding-bottom: 200px; */
+        padding: 200px 200px 100px;
       }
 
       .nav-ul {
