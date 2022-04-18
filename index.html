@@ -18,12 +18,6 @@
           <h2 style="font-size: 48px; font-weight: 400;">KubeSpace</h2>
           <p class="center-content">最好用的DevOps Kubernetes多集群管理平台</p>
         </div>
-        <!-- <div class="bottom-down">
-          <i class="el-icon-arrow-down bottom-down-i"></i>
-          <el-icon class="bottom-down-i">
-            <delete />
-          </el-icon>
-        </div> -->
       </section>
       <header class="nav">
         <a class="title">
@@ -31,57 +25,184 @@
         </a>
 
         <ul class="nav-ul">
-          <li class="nav-ul-li" >
-            <a class="nav-ul-li-link">
+          <li class="nav-ul-li" > 
+            <el-link :underline="false" class="nav-ul-li-link" target="_blank" href="https://github.com/kubespace/kubespace">
               GitHub
-            </a>
+            </el-line>
+          </li>
+          <!-- <li class="nav-ul-li">
+            <el-link :underline="false" class="nav-ul-li-link">文档</el-link>
           </li>
           <li class="nav-ul-li">
-            <a class="nav-ul-li-link">文档</a>
-          </li>
-          <li class="nav-ul-li">
-            <a class="nav-ul-li-link">联系我们</a>
-          </li>
+            <el-link :underline="false" class="nav-ul-li-link">联系我们</el-link>
+          </li> -->
         </ul>
       </header>
 
       <section class="content">
-
-        <div class="content-table">
-          <el-card class="box-card">
-          <el-table
-            ref="singleTable"
-            :data="tableData"
-            highlight-current-row
-            style="width: 100%">
-            <el-table-column
-              property="date"
-              label="功能"
-              min-width="30">
-            </el-table-column>
-            <el-table-column
-              property="name"
-              label="开源版"
-              min-width="30">
-              <template slot-scope="scope">
-                <div>
-                  <i class="el-icon-check" style="color: #409EFF; font-size: 18px; font-weight: 600;" v-if="scope.row.name"></i>
-                  <i class="el-icon-close" style="color: #F56C6C; font-size: 18px; font-weight: 600;" v-else></i>
+        <div class="content-table" :style="{height: height+'px'}">
+          <div style="vertical-align: middle; margin-top: -50px; padding: 0px 150px;">
+            <div style="text-align: center; font-size: 25px; font-weight: 500; margin-bottom: 50px;">
+              KubeSpace核心功能
+            </div>
+            <el-card style="width: 30%; float: left; margin: 0px 30px 30px 0px;">
+              <div slot="header" class="clearfix">
+                <span>多云集群管理</span>
+              </div>
+              <div class="text item" style="height: 45px;color: #909399;">
+                兼容不同云厂商的Kubernetes集群，并管理集群中的原生资源
+              </div>
+            </el-card>
+            <el-card style="width: 30%; float: left; margin: 0px 30px 30px 0px;">
+              <div slot="header" class="clearfix">
+                <span>工作空间</span>
+              </div>
+              <div class="text item" style="height: 45px;color: #909399;">
+                以环境（测试、生产等）以及应用为视角的工作空间管理
+              </div>
+            </el-card>
+            <el-card style="width: 30%; float: left; margin: 0px 30px 30px 0px;">
+              <div slot="header" class="clearfix">
+                <span>流水线</span>
+              </div>
+              <div class="text item" style="height: 45px;color: #909399;">
+                通过多种任务插件支持CICD，快速发布代码并部署到不同的工作空间
+              </div>
+            </el-card>
+            <el-card style="width: 30%; float: left; margin: 0px 30px 30px 0px;">
+              <div slot="header" class="clearfix">
+                <span>应用商店</span>
+              </div>
+              <div class="text item" style="height: 45px;color: #909399;">
+                内置丰富的中间件（mysql、redis等），以及支持导入发布自定义应用
+              </div>
+            </el-card>
+            <el-card style="width: 30%; float: left; margin: 0px 30px 30px 0px;">
+              <div slot="header" class="clearfix">
+                <span>平台配置</span>
+              </div>
+              <div class="text item" style="height: 45px;color: #909399;">
+                密钥、镜像仓库以及用户管理
+              </div>
+            </el-card>
+            <el-card style="width: 30%;">
+              <div slot="header" class="clearfix">
+                <span>权限管理</span>
+              </div>
+              <div class="text item" style="height: 45px;color: #909399;">
+                支持不同模块包括平台、工作空间、流水线以及集群的权限管理
+              </div>
+            </el-card>
+          </div>
+        </div>
+        <div class="content-table" :style="{height: height+'px'}" style="background-color: #fbfbfb;">
+          <div style="border: 0px solid; width: 100%; margin: 0px 80px 0px 50px;">
+            <el-row>
+              <el-col :span="7" style="vertical-align: middle;">
+                <div style="margin-right: 40px;">
+                  <div style="margin: 70px 0px 20px 1.6em; font-size: 18px;">Kubernetes集群多云管理</div>
+                  <div style="color: #909399; font-size: 14px;"> 
+                    <ul>
+                    <li>默认安装之后，会自动将当前集群「local」添加到平台，您还可以添加其它集群到平台。</li>
+                    <li>将Kubernetes集群成功连接到KubeSpace平台之后，就可以统一管理集群中的资源了。</li>
+                    </ul>
+                  </div>
                 </div>
-              </template>
-            </el-table-column>
-            <el-table-column
-              property="address"
-              label="企业版"
-              min-width="10">
-
-              <template slot-scope="scope">
-                <i class="el-icon-check" style="color: #409EFF; font-size: 18px; font-weight: 600;" v-if="scope.row.address"></i>
-                <i class="el-icon-close" style="color: #F56C6C; font-size: 18px; font-weight: 600;" v-else></i>
-              </template>
-            </el-table-column>
-          </el-table>
-          </el-card>
+              </el-col>
+              <el-col :span="17">
+                <el-carousel indicator-position="outside" height="70%" style="margin-top: -20px;">
+                  <el-carousel-item>
+                    <el-image src="./images/cluster_pods.jpg" fit="contain"></el-image>
+                  </el-carousel-item>
+                  <el-carousel-item>
+                    <el-image src="./images/cluster_daemonset.jpg" fit="contain"></el-image>
+                  </el-carousel-item>
+                </el-carousel>
+              </el-col>
+            </el-row>
+          </div>
+        </div>
+        <div class="content-table" :style="{height: height+'px'}">
+          <div style="border: 0px solid; width: 100%; margin: 0px 80px 0px 50px;">
+            <el-row>
+              <el-col :span="17">
+                <el-carousel indicator-position="outside" height="70%" style="margin-top: -20px;">
+                  <el-carousel-item>
+                    <el-image src="./images/workspace_apps.jpg" fit="contain"></el-image>
+                  </el-carousel-item>
+                  <el-carousel-item>
+                    <el-image src="./images/workspace_createapp.jpg" fit="contain"></el-image>
+                  </el-carousel-item>
+                </el-carousel>
+              </el-col>
+              <el-col :span="7" style="vertical-align: middle;">
+                <div style="margin-left: 40px;">
+                  <div style="margin: 70px 0px 20px 1.6em; font-size: 18px;">工作空间</div>
+                  <div style="color: #909399; font-size: 14px;"> 
+                    <ul>
+                    <li>以环境（测试环境、生产环境等）为视角，对不同环境中的应用进行管理。</li>
+                    <li>每个工作空间绑定集群中的命名空间，来隔离不同环境的资源。</li>
+                    <li>可以将应用克隆到其它工作空间，或发布到应用商店，快速启动一个新的环境。</li>
+                    </ul>
+                  </div>
+                </div>
+              </el-col>
+            </el-row>
+          </div>
+        </div>
+        <div class="content-table" :style="{height: height+'px'}" style="background-color: #fbfbfb;">
+          <div style="border: 0px solid; width: 100%; margin: 0px 80px 0px 50px;">
+            <el-row>
+              <el-col :span="7" style="vertical-align: middle;">
+                <div style="margin-right: 40px;">
+                  <div style="margin: 70px 0px 20px 1.6em; font-size: 18px;">流水线</div>
+                  <div style="color: #909399; font-size: 14px;"> 
+                    <ul>
+                    <li>内置多种任务插件，快速构建代码镜像并发布到工作空间。</li>
+                    <li>流水线任务状态以及日志实时刷新。</li>
+                    </ul>
+                  </div>
+                </div>
+              </el-col>
+              <el-col :span="17">
+                <el-carousel indicator-position="outside" height="70%" style="margin-top: -20px;">
+                  <el-carousel-item>
+                    <el-image src="./images/pipeline-list.jpg" fit="contain"></el-image>
+                  </el-carousel-item>
+                  <el-carousel-item>
+                    <el-image src="./images/pipeline_builds.jpg" fit="contain"></el-image>
+                  </el-carousel-item>
+                  <el-carousel-item>
+                    <el-image src="./images/pipeline_build_detail.jpg" fit="contain"></el-image>
+                  </el-carousel-item>
+                </el-carousel>
+              </el-col>
+            </el-row>
+          </div>
+        </div>
+        <div class="content-table" :style="{height: height+'px'}">
+          <div style="border: 0px solid; width: 100%; margin: 0px 80px 0px 50px;">
+            <el-row>
+              <el-col :span="17">
+                <el-carousel indicator-position="outside" height="70%" style="margin-top: -20px;">
+                  <el-carousel-item>
+                    <el-image src="./images/appstore.jpg" fit="contain"></el-image>
+                  </el-carousel-item>
+                </el-carousel>
+              </el-col>
+              <el-col :span="7" style="vertical-align: middle;">
+                <div style="margin-left: 40px;">
+                  <div style="margin: 70px 0px 20px 1.6em; font-size: 18px;">应用商店</div>
+                  <div style="color: #909399; font-size: 14px;"> 
+                    <ul>
+                    <li>内置丰富的中间件，可以快速导入工作空间并安装部署，以支持业务应用。</li>
+                    <li>可以导入业务中间件，以及发布工作空间中的应用到应用商店。</li>
+                    </ul>
+                  </div>
+                </div>
+              </el-col>
+            </el-row>
+          </div>
         </div>
       </section>
 
@@ -91,6 +212,7 @@
         el: '#app',
         data: function() {
           return { 
+            height: window.innerHeight - 50,
             tableData: [{
               date: '集群管理',
               name: true,
@@ -190,8 +312,8 @@
         position: fixed;
         width: 100%;
         top: 0;
-        height: 70px;
-        padding-top: 15px;
+        height: 50px;
+        padding-top: 5px;
         z-index: 10;
         background-color: #fff;
         border-bottom: 1px solid #eee;
@@ -200,21 +322,21 @@
       }
 
       .title {
-        /* margin-top: -8px; */
+        margin-top: 7px;
         padding-left: 16px;
         display: block;
         color: #555;
         float: left;
-        font-size: 2em;
+        font-size: 22px;
       }
 
       .content {
-        padding-top: 100px;
+        padding-top: 50px;
         /* min-height: 500px; */
         left: 0;
         right: 0;
         background-color: #fff;
-        padding-bottom: 50px
+        /* padding-bottom: 50px */
       }
 
       .content-table {
@@ -223,7 +345,12 @@
         right: 0;
         background-color: #fff;
         /* padding-bottom: 200px; */
-        padding: 200px 200px 100px;
+        padding: 0px 0px 0px;
+        vertical-align: middle;
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
       }
 
       .nav-ul {
@@ -244,7 +371,7 @@
       .nav-ul-li {
         position: relative;
         padding: 0;
-        margin: 0;
+        margin: 4px 0 0;
         height: 100%;
         display: inline-block;
         zoom: 1;
