@@ -1,4 +1,9 @@
-site_name: My Docs
+site_name: KubeSpace
 theme:
   name: null
   custom_dir: 'gitbook/'
+nav:
+    - Home:
+        - Index: index.md
+    - About:
+        - About: about.md

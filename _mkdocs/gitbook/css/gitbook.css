@@ -1,0 +1,61 @@
+.gitbook .nav {
+  /* position: fixed; */
+  width: 100%;
+  top: 0;
+  height: 50px;
+  padding-top: 4px;
+  z-index: 10;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  white-space: nowrap;
+  box-sizing: border-box;
+  box-shadow: 0 1px 4px rgb(0 21 41 / 8%);
+}
+.gitbook .title {
+  margin-top: 7px;
+  padding-left: 16px;
+  display: block;
+  color: #555;
+  float: left;
+  font-size: 22px;
+}
+.gitbook .nav-ul {
+  float: right;
+  list-style: none;
+  display: inline-block;
+  max-width: 100%;
+  overflow-x: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 0 1em 0 0 ;
+  padding: 0;
+  position: relative;
+}
+
+.gitbook .nav-ul-li {
+  position: relative;
+  padding: 0;
+  margin: 4px 0 0;
+  height: 100%;
+  display: inline-block;
+  zoom: 1;
+  vertical-align: middle;
+}
+
+.gitbook .nav-ul-li-link {
+  /* background-color: #eee; */
+  padding: 0.5em 1em;
+  color: #606266;
+  display: block;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.gitbook .nav-ul-li-link:hover {
+  color: #409EFF;
+}

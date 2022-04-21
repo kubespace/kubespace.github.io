@@ -1,11 +1,11 @@
 <nav role="navigation">
 <ul class="summary">
 {%- block site_name %}
-<li>
+<!-- <li>
 <a href="{{ nav.homepage.url | url }}" target="_blank" class="custom-link">{{ config.site_name }}</a>
-</li>
+</li> -->
 {%- endblock %}
-<li class="divider"></li>
+<!-- <li class="divider"></li> -->
 
 {%- if nav | length >=1 %}
 {%- for nav_item in nav %}
@@ -19,7 +19,7 @@
 <a href="{{ nav_item.url | url }}">{{ nav_item.title }}</a>
 {%- endif %}
 {%- endfor %}
-<li class="divider"></li>
+<!-- <li class="divider"></li> -->
 {%- endif %}
 
 {% if config.copyright %}
