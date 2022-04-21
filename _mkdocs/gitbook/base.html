@@ -1,51 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+{%- block site_meta %}
 <meta charset="utf-8">
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>Welcome to MkDocs - My Docs</title>
+{%- block htmltitle %}
+<title>{% if page and page.title %}{{ page.title }} - {% endif %}{{ config.site_name }}</title>
+{%- endblock %}
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-<meta name="generator" content="mkdocs-1.3.0, mkdocs-gitbook-">
-
-<link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+{% if config.site_description %}<meta name="description" content="{{ config.site_description }}">{% endif %}
+<meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-gitbook-{{ config.theme.version }}">
+{% if config.site_author %}<meta name="author" content="{{ config.site_author }}">{% endif %}
+<link rel="shortcut icon" href="{{ base_url }}/images/favicon.ico" type="image/x-icon">
 <meta name="HandheldFriendly" content="true"/>
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 <meta rel="next" href="" />
-<link href="./css/style.min.css" rel="stylesheet"> 
+{%- endblock %}
+
+{%- block styles %}
+<link href="{{ base_url }}/css/style.min.css" rel="stylesheet">
+{%- for path in extra_css %}
+<link href="{{ path }}" rel="stylesheet">
+{%- endfor %}
+{%- endblock %}
+
+{%- block extrahead %} {% endblock %}
 </head>
 
 <body>
 <div class="book">
 <div class="book-summary">
+
+{%- block search_button %}
+{%- if 'search' in config['plugins'] %}
 <div id="book-search-input" role="search">
 <input type="text" placeholder="Type to search" />
 </div> <!-- end of book-search-input -->
+{%- endif %}
+{%- endblock %}
 
-<nav role="navigation">
-<ul class="summary">
-<li>
-<a href="." target="_blank" class="custom-link">My Docs</a>
-</li>
-<li class="divider"></li>
-<li class="chapter active" data-path="">
-<a href=".">Welcome to MkDocs</a>
-<li class="divider"></li>
+{%- block site_nav %}
 
+{% include "nav.html" %}
 
-
-<!--<li><a href="http://www.mkdocs.org">-->
-<!--Published with MkDocs-->
-<!--</a></li>-->
-
-<!--<li><a href="https://github.com/GitbookIO/theme-default">-->
-<!--Theme by GitBook-->
-<!--</a></li>-->
-</ul>
-
-</nav>
+{%- endblock %}
 
 </div> <!-- end of book-summary -->
 
@@ -63,31 +63,23 @@
 
 <div class="page-wrapper" tabindex="-1" role="main">
 <div class="page-inner">
+
+{%- if 'search' in config['plugins'] %}
 <div id="book-search-results">
 <div class="search-noresults">
+{%- endif %}
 
 <section class="normal markdown-section">
 
+{%- block content %}
 
+{% include "content.html" %}
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre>
-
+{%- endblock %}
 
 </section>
+
+{%- if 'search' in config['plugins'] %}
 </div> <!-- end of search-noresults -->
 <div class="search-results">
 <div class="has-results">
@@ -103,6 +95,7 @@ docs/
 </div> <!-- end of no-results -->
 </div> <!-- end of search-results -->
 </div> <!-- end of book-search-results -->
+{%- endif %}
 
 </div> <!-- end of page-inner -->
 </div> <!-- end of page-wrapper -->
@@ -110,9 +103,17 @@ docs/
 </div> <!-- end of body-inner -->
 
 </div> <!-- end of book-body -->
-<script src="./js/main.js"></script>
-<script src="search/main.js"></script>
-<script src="./js/gitbook.min.js"></script>
-<script src="./js/theme.min.js"></script>
+
+{%- block scripts %}
+<script src="{{ base_url }}/js/main.js"></script>
+{%- for path in extra_javascript %}
+<script src="{{ path }}"></script>
+{%- endfor %}
+{%- endblock %}
+
+{%- block libs %}
+<script src="{{ base_url }}/js/gitbook.min.js"></script>
+<script src="{{ base_url }}/js/theme.min.js"></script>
+{%- endblock %}
 </body>
 </html>
