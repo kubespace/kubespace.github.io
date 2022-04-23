@@ -9,7 +9,7 @@ entries:
       sources:
       - https://github.com/kubespace/kubespace
       urls:
-      - https://github.com/kubespace/kubespace/releases/download/1.0.0/kubespace-1.0.0.tgz
+      - https://gitee.com/kubespacee/kubespace/attach_files/1039654/download/kubespace-1.0.0.tgz
       version: 1.0.0
       appVersion: 1.0.0
 generated: "2022-04-17T21:54:07.710316+08:00"
