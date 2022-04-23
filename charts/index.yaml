@@ -9,6 +9,17 @@ entries:
       sources:
       - https://github.com/kubespace/kubespace
       urls:
+      - https://gitee.com/kubespacee/kubespace/attach_files/1039687/download/kubespace-1.0.2.tgz
+      version: 1.0.2
+      appVersion: 1.0.2
+    - created: 2022-04-23T21:54:07.710316+08:00
+      description: KubeSpace DevOps Kubernetes Management Platfrom
+      digest: 99c76e403d752c84ead610644d4b1c2f2b453a74b921f422b9dcb8a7c8b559cd
+      home: https://kubespace.cn
+      name: kubespace
+      sources:
+      - https://github.com/kubespace/kubespace
+      urls:
       - https://gitee.com/kubespacee/kubespace/attach_files/1039673/download/kubespace-1.0.1.tgz
       version: 1.0.1
       appVersion: 1.0.1
