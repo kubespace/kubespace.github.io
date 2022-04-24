@@ -53,7 +53,7 @@
   </header>
 </div>
 <div class="book" style="height: calc(100% - 50px);">
-<div class="book-summary" style="background-color: white;">
+<div class="book-summary" style="background-color: white; width: 250px;">
 
 {%- block search_button %}
 {%- if 'search' in config['plugins'] %}
@@ -71,7 +71,7 @@
 
 </div> <!-- end of book-summary -->
 
-<div class="book-body">
+<div class="book-body" style="left: 250px;">
 <div class="body-inner">
 <div class="book-header" role="navigation">
 
@@ -84,7 +84,7 @@
 </div> <!-- end of book-header -->
 
 <div class="page-wrapper" tabindex="-1" role="main">
-<div class="page-inner">
+<div class="page-inner" style="max-width: 850px;">
 
 {%- if 'search' in config['plugins'] %}
 <div id="book-search-results">

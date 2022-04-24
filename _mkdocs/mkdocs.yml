@@ -3,7 +3,22 @@ theme:
   name: null
   custom_dir: 'gitbook/'
 nav:
-    - Home:
-        - Index: index.md
-    - About:
-        - About: about.md
+    - 安装配置: index.md
+    - 集群管理: about.md
+    - 工作空间: 
+        - 空间管理: about.md
+        - 应用管理: index.md
+        - 空间资源: about.md
+        - 成员管理: about.md
+    - 流水线:
+        - 流水线空间: about.md
+        - 代码流水线: about.md
+        - 构建流水线: about.md
+        - 资源管理: about.md
+        - 权限管理: about.md
+    - 应用商店: index.md
+    - 平台配置:
+        - 密钥管理: index.md
+        - 镜像仓库: index.md
+        - 用户管理: index.md
+        - 平台权限: index.md

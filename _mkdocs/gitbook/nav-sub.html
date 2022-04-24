@@ -1,5 +1,5 @@
 {%- if not nav_item.children %}
-<li>
+<li style="margin-left: 20px;">
 <a href="{{ nav_item.url|url }}" class="{% if nav_item.active %}active{% endif %}">{{ nav_item.title }}</a>
 </li>
 {%- else %}
