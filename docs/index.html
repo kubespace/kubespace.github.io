@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-<title>KubeSpace - Index</title>
+<title>KubeSpace - 安装配置</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <meta name="generator" content="mkdocs-1.3.0, mkdocs-gitbook-">
@@ -41,27 +41,79 @@
   </header>
 </div>
 <div class="book" style="height: calc(100% - 50px);">
-<div class="book-summary" style="background-color: white;">
+<div class="book-summary" style="background-color: white; width: 250px;">
 <!-- <div id="book-search-input" role="search">
 <input type="text" placeholder="Type to search" />
 </div> end of book-search-input -->
 
 <nav role="navigation">
-<ul class="summary">
+<ul class="summary" style="padding-left: 20px;">
 <!-- <li>
 <a href="." target="_blank" class="custom-link">KubeSpace</a>
 </li> -->
 <!-- <li class="divider"></li> -->
-<li class="header">Home</li>
+<li class="chapter active" data-path="">
+<a href=".">安装配置</a>
+<li class="chapter" data-path="cluster/cluster/">
+<a href="cluster/cluster/">集群管理</a>
+<li class="header">工作空间</li>
 
-<li>
-<a href="." class="active">Index</a>
+<li style="margin-left: 20px;" class="">
+<a href="workspace/workspace/">空间管理</a>
 </li>
 
-<li class="header">About</li>
+<li style="margin-left: 20px;" class="">
+<a href="workspace/apps/">应用管理</a>
+</li>
 
-<li>
-<a href="about/" class="">About</a>
+<li style="margin-left: 20px;" class="">
+<a href="workspace/resource/">空间资源</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="workspace/member/">成员管理</a>
+</li>
+
+<li class="header">流水线</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="pipeline/pipeline_space/">流水线空间</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="pipeline/pipeline/">代码流水线</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="pipeline/build/">构建流水线</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="pipeline/resource/">资源管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="pipeline/member/">权限管理</a>
+</li>
+
+<li class="chapter" data-path="appstore/appstore/">
+<a href="appstore/appstore/">应用商店</a>
+<li class="header">平台配置</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="platform/secret/">密钥管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="platform/repository/">镜像仓库</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="platform/user/">用户管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="platform/permission/">平台权限</a>
 </li>
 
 <!-- <li class="divider"></li> -->
@@ -81,7 +133,7 @@
 
 </div> <!-- end of book-summary -->
 
-<div class="book-body">
+<div class="book-body" style="left: 250px;">
 <div class="body-inner">
 <div class="book-header" role="navigation">
 
@@ -94,7 +146,7 @@
 </div> <!-- end of book-header -->
 
 <div class="page-wrapper" tabindex="-1" role="main">
-<div class="page-inner">
+<div class="page-inner" style="max-width: 850px;">
 <div id="book-search-results">
 <div class="search-noresults">
 
@@ -102,35 +154,33 @@
 
 
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+<h1 id="kubespace">KubeSpace</h1>
+<p>KubeSpace是一个DevOps以及Kubernetes多集群管理平台。KubeSpace可以兼容不同云厂商的Kubernetes集群，极大的方便了集群的管理工作。</p>
+<p>KubeSpace平台当前包括如下功能：</p>
+<ol>
+<li>集群管理：Kubernetes集群原生资源的管理；</li>
+<li>工作空间：以环境（测试、生产等）以及应用为视角的工作空间管理；</li>
+<li>流水线：通过多种任务插件支持CICD，快速发布代码并部署到不同的工作空间；</li>
+<li>应用商店：内置丰富的中间件（mysql、redis等），以及支持导入发布自定义应用；</li>
+<li>平台配置：密钥、镜像仓库管理，以及不同模块的权限管理。</li>
+</ol>
+<h3 id="_1">安装</h3>
+<p>通过<a href="https://helm.sh/docs/intro/install/">helm</a>安装kubespace，执行如下命令：</p>
+<pre><code>helm repo add kubespace https://kubespace.cn/charts
+helm install kubespace -n kubespace kubespace/kubespace --create-namespace
 </code></pre>
-<h1 id="welcome-to-mkdocs_1">Welcome to MkDocs</h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands_1">Commands</h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout_1">Project layout</h2>
-<pre><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
+<p>安装之后，查看所有Pod是否运行正常：</p>
+<pre><code>kubectl get pods -n kubespace -owide -w
+</code></pre>
+<p>当所有Pod运行正常后，通过如下命令查看浏览器访问地址：</p>
+<pre><code>export NODE_PORT=$(kubectl get -n kubespace -o jsonpath=&quot;{.spec.ports[0].nodePort}&quot; services kubespace)
+export NODE_IP=$(kubectl get nodes -o jsonpath=&quot;{.items[0].status.addresses[0].address}&quot;)
+echo http://$NODE_IP:$NODE_PORT
+</code></pre>
+<h3 id="_2">升级</h3>
+<p>通过<a href="https://helm.sh/docs/intro/install/">helm</a>升级kubespace，执行如下命令：</p>
+<pre><code>helm repo update
+helm upgrade -n kubespace kubespace kubespace/kubespace
 </code></pre>
 
 

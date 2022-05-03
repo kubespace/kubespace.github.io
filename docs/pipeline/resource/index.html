@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>KubeSpace - 资源管理</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.3.0, mkdocs-gitbook-">
+
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../css/style.min.css" rel="stylesheet">
+<link href="../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="gitbook">
+  <header class="nav">
+    <a class="title">
+      <span style="display:inline-block;vertical-align: middle;margin-top: -4px;">KubeSpace</span>
+    </a>
+
+    <ul class="nav-ul">
+      <li class="nav-ul-li" > 
+        <a :underline="false" class="nav-ul-li-link" target="_blank" href="https://github.com/kubespace/kubespace">
+          GitHub
+        </a>
+      </li>
+      <!-- <li class="nav-ul-li">
+        <el-link :underline="false" class="nav-ul-li-link">文档</el-link>
+      </li>
+      <li class="nav-ul-li">
+        <el-link :underline="false" class="nav-ul-li-link">联系我们</el-link>
+      </li> -->
+    </ul>
+  </header>
+</div>
+<div class="book" style="height: calc(100% - 50px);">
+<div class="book-summary" style="background-color: white; width: 250px;">
+<!-- <div id="book-search-input" role="search">
+<input type="text" placeholder="Type to search" />
+</div> end of book-search-input -->
+
+<nav role="navigation">
+<ul class="summary" style="padding-left: 20px;">
+<!-- <li>
+<a href="../.." target="_blank" class="custom-link">KubeSpace</a>
+</li> -->
+<!-- <li class="divider"></li> -->
+<li class="chapter" data-path="">
+<a href="../..">安装配置</a>
+<li class="chapter" data-path="cluster/cluster/">
+<a href="../../cluster/cluster/">集群管理</a>
+<li class="header">工作空间</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../workspace/workspace/">空间管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../workspace/apps/">应用管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../workspace/resource/">空间资源</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../workspace/member/">成员管理</a>
+</li>
+
+<li class="header">流水线</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../pipeline_space/">流水线空间</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../pipeline/">代码流水线</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../build/">构建流水线</a>
+</li>
+
+<li style="margin-left: 20px;" class="active">
+<a href="./">资源管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../member/">权限管理</a>
+</li>
+
+<li class="chapter" data-path="appstore/appstore/">
+<a href="../../appstore/appstore/">应用商店</a>
+<li class="header">平台配置</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../platform/secret/">密钥管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../platform/repository/">镜像仓库</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../platform/user/">用户管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../platform/permission/">平台权限</a>
+</li>
+
+<!-- <li class="divider"></li> -->
+
+
+
+<!--<li><a href="http://www.mkdocs.org">-->
+<!--Published with MkDocs-->
+<!--</a></li>-->
+
+<!--<li><a href="https://github.com/GitbookIO/theme-default">-->
+<!--Theme by GitBook-->
+<!--</a></li>-->
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body" style="left: 250px;">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner" style="max-width: 850px;">
+<div id="book-search-results">
+<div class="search-noresults">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="_1">资源管理</h1>
+<p>在流水线空间中，可以添加镜像/主机资源，在编译或执行shell脚本时使用。</p>
+<p>默认KubeSpace平台会内置一些镜像资源，如python、node、golang等，当前不可以对内置的镜像资源镜像修改删掉操作。</p>
+<p><img alt="image-20220503204522941" src="../images/pipeline_resource_list.png" /></p>
+<h3 id="_2">创建资源</h3>
+<p>点击「创建资源」按钮，在弹出框中填写镜像/主机信息：</p>
+<p><img alt="image-20220503204824071" src="../images/pipeline_resource_create.png" /></p>
+<p>其中：</p>
+<ul>
+<li>资源名称：该流水线资源的名称；</li>
+<li>资源类型：镜像或者主机类型；</li>
+<li>全局共享：该资源是否对整个平台的所有流水线空间都可以使用；</li>
+<li>镜像地址/主机地址：资源的镜像地址或主机地址；</li>
+<li>认证密钥：主机认证的用户密码；</li>
+<li>描述：该资源的简单描述。</li>
+</ul>
+
+
+</section>
+</div> <!-- end of search-noresults -->
+<div class="search-results">
+<div class="has-results">
+
+<!-- <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1> -->
+<ul class="search-results-list"></ul>
+
+</div> <!-- end of has-results -->
+<div class="no-results">
+
+<!-- <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1> -->
+
+</div> <!-- end of no-results -->
+</div> <!-- end of search-results -->
+</div> <!-- end of book-search-results -->
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../js/main.js"></script>
+<script src="../../search/main.js"></script>
+<script src="../../js/gitbook.min.js"></script>
+<script src="../../js/theme.min.js"></script>
+</body>
+</html>

@@ -41,27 +41,79 @@
   </header>
 </div>
 <div class="book" style="height: calc(100% - 50px);">
-<div class="book-summary" style="background-color: white;">
+<div class="book-summary" style="background-color: white; width: 250px;">
 <!-- <div id="book-search-input" role="search">
 <input type="text" placeholder="Type to search" />
 </div> end of book-search-input -->
 
 <nav role="navigation">
-<ul class="summary">
+<ul class="summary" style="padding-left: 20px;">
 <!-- <li>
 <a href=".." target="_blank" class="custom-link">KubeSpace</a>
 </li> -->
 <!-- <li class="divider"></li> -->
-<li class="header">Home</li>
+<li class="chapter" data-path="">
+<a href="..">安装配置</a>
+<li class="chapter" data-path="cluster/cluster/">
+<a href="../cluster/cluster/">集群管理</a>
+<li class="header">工作空间</li>
 
-<li>
-<a href=".." class="">Index</a>
+<li style="margin-left: 20px;" class="">
+<a href="../workspace/workspace/">空间管理</a>
 </li>
 
-<li class="header">About</li>
+<li style="margin-left: 20px;" class="">
+<a href="../workspace/apps/">应用管理</a>
+</li>
 
-<li>
-<a href="./" class="active">About</a>
+<li style="margin-left: 20px;" class="">
+<a href="../workspace/resource/">空间资源</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../workspace/member/">成员管理</a>
+</li>
+
+<li class="header">流水线</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../pipeline/pipeline_space/">流水线空间</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../pipeline/pipeline/">代码流水线</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../pipeline/build/">构建流水线</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../pipeline/resource/">资源管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../pipeline/member/">权限管理</a>
+</li>
+
+<li class="chapter" data-path="appstore/appstore/">
+<a href="../appstore/appstore/">应用商店</a>
+<li class="header">平台配置</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../platform/secret/">密钥管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../platform/repository/">镜像仓库</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../platform/user/">用户管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../platform/permission/">平台权限</a>
 </li>
 
 <!-- <li class="divider"></li> -->
@@ -81,7 +133,7 @@
 
 </div> <!-- end of book-summary -->
 
-<div class="book-body">
+<div class="book-body" style="left: 250px;">
 <div class="body-inner">
 <div class="book-header" role="navigation">
 
@@ -94,7 +146,7 @@
 </div> <!-- end of book-header -->
 
 <div class="page-wrapper" tabindex="-1" role="main">
-<div class="page-inner">
+<div class="page-inner" style="max-width: 850px;">
 <div id="book-search-results">
 <div class="search-noresults">
 
