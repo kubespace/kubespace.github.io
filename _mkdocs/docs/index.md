@@ -37,3 +37,11 @@ echo http://$NODE_IP:$NODE_PORT
 helm repo update
 helm upgrade -n kubespace kubespace kubespace/kubespace
 ```
+
+### 交流讨论
+
+如果您在使用过程中，有任何问题、建议或功能需求，欢迎随时跟我们交流。
+
+可以使用QQ扫描下面二维码，加入我们的QQ交流群。
+
+<img src="images/qq-qrcode.png" alt="image-20220504114207452" style="zoom:30%;" />
