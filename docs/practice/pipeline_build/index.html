@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>KubeSpace - 最简流水线之构建</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.3.0, mkdocs-gitbook-">
+
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../css/style.min.css" rel="stylesheet">
+<link href="../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="gitbook">
+  <header class="nav">
+    <a class="title" style="cursor: pointer;" href="/">
+      <span style="display:inline-block;vertical-align: middle;margin-top: -4px;">KubeSpace</span>
+    </a>
+
+    <ul class="nav-ul">
+      <li class="nav-ul-li" > 
+        <a :underline="false" class="nav-ul-li-link" target="_blank" href="https://github.com/kubespace/kubespace">
+          GitHub
+        </a>
+      </li>
+      <li class="nav-ul-li" style="margin-right: 20px;"> 
+        <a :underline="false" class="nav-ul-li-link" href="/docs">
+          文档
+        </a>
+      </li>
+      <!-- <li class="nav-ul-li">
+        <el-link :underline="false" class="nav-ul-li-link">文档</el-link>
+      </li>
+      <li class="nav-ul-li">
+        <el-link :underline="false" class="nav-ul-li-link">联系我们</el-link>
+      </li> -->
+    </ul>
+  </header>
+</div>
+<div class="book" style="height: calc(100% - 50px);">
+<div class="book-summary" style="background-color: white; width: 250px;">
+<!-- <div id="book-search-input" role="search">
+<input type="text" placeholder="Type to search" />
+</div> end of book-search-input -->
+
+<nav role="navigation">
+<ul class="summary" style="padding-left: 20px;">
+<!-- <li>
+<a href="../.." target="_blank" class="custom-link">KubeSpace</a>
+</li> -->
+<!-- <li class="divider"></li> -->
+<li class="chapter" data-path="">
+<a href="../..">安装配置</a>
+<li class="header">最佳实践</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../app/">应用管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../appstore/">应用商店</a>
+</li>
+
+<li style="margin-left: 20px;" class="active">
+<a href="./">最简流水线之构建</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../pipline_deploy.md">最简流水线之部署</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../pipeline_release/">最简流水线之发布</a>
+</li>
+
+<li class="chapter" data-path="cluster/cluster/">
+<a href="../../cluster/cluster/">集群管理</a>
+<li class="header">工作空间</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../workspace/workspace/">空间管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../workspace/apps/">应用管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../workspace/resource/">空间资源</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../workspace/member/">成员管理</a>
+</li>
+
+<li class="header">流水线</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../pipeline/pipeline_space/">流水线空间</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../pipeline/pipeline/">代码流水线</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../pipeline/build/">构建流水线</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../pipeline/resource/">资源管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../pipeline/member/">权限管理</a>
+</li>
+
+<li class="chapter" data-path="appstore/appstore/">
+<a href="../../appstore/appstore/">应用商店</a>
+<li class="header">平台配置</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../platform/secret/">密钥管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../platform/repository/">镜像仓库</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../platform/user/">用户管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../platform/permission/">平台权限</a>
+</li>
+
+<!-- <li class="divider"></li> -->
+
+
+
+<!--<li><a href="http://www.mkdocs.org">-->
+<!--Published with MkDocs-->
+<!--</a></li>-->
+
+<!--<li><a href="https://github.com/GitbookIO/theme-default">-->
+<!--Theme by GitBook-->
+<!--</a></li>-->
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body" style="left: 250px;">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner" style="max-width: 850px;">
+<div id="book-search-results">
+<div class="search-noresults">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="kubespace">KubeSpace最简流水线之构建</h1>
+<p><a href="https://kubespace.cn">KubeSpace</a>是一个DevOps以及Kubernetes多集群管理平台。</p>
+<h3 id="_1">准备</h3>
+<h5 id="git">Git代码仓库</h5>
+<p>现在我们有一个很简单的golang http服务，代码托管在<a href="https://github.com/lzeen/go-app">Github</a>。</p>
+<p>本地启动golang服务，端口为8000：</p>
+<pre><code>go run main.go
+</code></pre>
+<p>请求http://127.0.0.1:8000/current_time返回当前时间：</p>
+<pre><code>curl http://127.0.0.1:8000/current_time
+Hello, current time: 2022-05-08 11:11:33.632898 +0800 CST m=+18.871691849
+</code></pre>
+<h5 id="git_1">Git私钥</h5>
+<p>一般访问git的私钥在本地文件<code>~/.ssh/id_rsa</code>中。若不是该文件，请提前准备好。</p>
+<h3 id="_2">代码流水线空间</h3>
+<h5 id="_3">添加密钥</h5>
+<p>在KubeSpace中的「平台配置」-「密钥管理」中，点击「+ 创建密钥」，添加准备好的git私钥。</p>
+<p><img alt="image-20220508220841103" src="../images/pipeline_create_secret.png" /></p>
+<h5 id="_4">添加镜像仓库</h5>
+<p>在KubeSpace中的「平台配置」-「镜像仓库」中，点击「+ 添加仓库」，添加镜像仓库，输入用户密码。</p>
+<p><img alt="image-20220508221424412" src="../images/pipeline_add_registry.png" /></p>
+<p>这里，我添加了一个「registry.cn-hangzhou.aliyuncs.com」阿里云的镜像仓库。如果是docker hub，则添加「docker.io」即可。</p>
+<h5 id="_5">创建代码空间</h5>
+<p>在KubeSpace流水线中，点击「+ 创建空间」。</p>
+<p><img alt="image-20220508221818054" src="../images/pipeline_create_space.png" /></p>
+<p>如上，选择代码类型为「GIT」，输入git仓库地址，并选择刚刚添加的密钥。</p>
+<p>点击「确定」，创建代码流水线空间之后，默认会创建两条流水线：分支流水线、主干流水线。在两条流水线中都默认包括一个「构建代码镜像」的阶段任务，但是在主干流水线中会多一个「发布」的阶段任务。</p>
+<p><img alt="image-20220508222336083" src="../images/pipeline_list.png" /></p>
+<h3 id="_6">构建代码镜像</h3>
+<h5 id="_7">编辑分支流水线</h5>
+<p>在流水线列表，点击分支流水线的「编辑」按钮，来配置流水线的阶段任务。</p>
+<p><img alt="image-20220508222958986" src="../images/pipeline_edit.png" /></p>
+<p>如上，主要包括「基本信息」与「阶段任务」两个部分。</p>
+<p>因为当前go-app的代码库只有一个master分支，所以在阶段任务中的「代码库源」中，需要配置触发分支为所有。默认分支流水线是排除master分支的。</p>
+<p><img alt="image-20220508223303518" src="../images/pipeline_edit_source.png" /></p>
+<p>然后，需要修改「构建代码镜像」的任务，点击「构建代码镜像」上方的圆圈进行配置。</p>
+<p><img alt="image-20220508223859767" src="../images/pipeline_edit_job_build.png" /></p>
+<p>如上，首先对代码进行编译，若不需要编译，则将「编译」取消即可。</p>
+<p>若需要编译，则选择编译镜像，KubeSpace默认会自带一些各个语言如golang、node等镜像，如不满足，可以在「资源管理」中进行添加。</p>
+<p>然后编译方式分为脚本文件与自定义脚本。脚本文件是在代码库中的编译脚本，需指定相对目录；自定义脚本则在下方的编译脚本中输入编译相关命令即可。</p>
+<p>编译完成之后，会对编译后的代码库进行镜像构建。首先需要选择要推送的镜像仓库，这里选择我们刚刚添加的「registry.cn-hangzhou.aliyuncs.com」镜像仓库。</p>
+<p>之后输入构建镜像的Dockerfile以及镜像名称。<strong>注意：镜像名称不需要填写标签，在构建镜像时会自动添加动态标签</strong></p>
+<h5 id="_8">执行流水线</h5>
+<p>对分支流水线编辑完成之后，就可以对执行构建流水线了。</p>
+<p><img alt="image-20220508224956036" src="../images/pipeline_build_list.png" /></p>
+<p>如上，点击「构建」按钮。</p>
+<p><img alt="image-20220508225127504" src="../images/pipeline_build_master.png" /></p>
+<p>构建分支输入「master」分支，点击「确定」之后，开始执行分支流水线配置的任务。</p>
+<p><img alt="image-20220508225738662" src="../images/pipeline_build_list_exec.png" /></p>
+<p>点击「#1」，可以查看当前执行任务的日志以及阶段信息。</p>
+<p><img alt="image-20220508230013786" src="../images/pipeline_build_exec_log.png" /></p>
+<p>如上，「构建代码镜像」任务执行完成之后，会构建出go-app代码镜像，并推送到镜像仓库。</p>
+<h3 id="_9">手动升级应用</h3>
+<p>在流水线构建出代码镜像之后，如上我们构建出go-app的镜像「registry.cn-hangzhou.aliyuncs.com/librrary/go-app:1652021791」。可以在工作空间的应用中，手动对go-app的应用进行镜像升级。</p>
+<p><img alt="image-20220508231058417" src="../images/pipeline_upgrade_app.png" /></p>
+<p>如上，我们对go-app应用的标签升级为流水线构建出来的镜像标签。</p>
+<p>点击go-app，可以查看应用的升级过程。</p>
+<p><img alt="image-20220508231236631" src="../images/pipeline_upgrade_detail.png" /></p>
+<p>可以看到，当前应用的镜像已经替换为最新的镜像标签，且有新的Pod实例正在创建。</p>
+<p>是不是很简单！</p>
+<p>OK，收工！</p>
+<h3 id="_10">交流沟通</h3>
+<p>如果您在使用过程中，有任何问题、建议或功能需求，欢迎随时跟我们交流或提交<a href="https://github.com/kubespace/kubespace/issues">issue</a>。</p>
+<p>可以使用QQ扫描下面二维码，加入我们的QQ交流群。</p>
+<p><img src="/docs/images/qq-qrcode.png" alt="image-20220508162905664" style="zoom:30%;" /></p>
+
+
+</section>
+</div> <!-- end of search-noresults -->
+<div class="search-results">
+<div class="has-results">
+
+<!-- <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1> -->
+<ul class="search-results-list"></ul>
+
+</div> <!-- end of has-results -->
+<div class="no-results">
+
+<!-- <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1> -->
+
+</div> <!-- end of no-results -->
+</div> <!-- end of search-results -->
+</div> <!-- end of book-search-results -->
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../js/main.js"></script>
+<script src="../../search/main.js"></script>
+<script src="../../js/gitbook.min.js"></script>
+<script src="../../js/theme.min.js"></script>
+</body>
+</html>

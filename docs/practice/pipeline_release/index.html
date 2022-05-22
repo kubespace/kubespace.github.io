@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>KubeSpace - 最简流水线之发布</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="generator" content="mkdocs-1.3.0, mkdocs-gitbook-">
+
+<link rel="shortcut icon" href="../../images/favicon.ico" type="image/x-icon">
+<meta name="HandheldFriendly" content="true"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta rel="next" href="" />
+<link href="../../css/style.min.css" rel="stylesheet">
+<link href="../../css/gitbook.css" rel="stylesheet"> 
+</head>
+
+<body>
+<div class="gitbook">
+  <header class="nav">
+    <a class="title" style="cursor: pointer;" href="/">
+      <span style="display:inline-block;vertical-align: middle;margin-top: -4px;">KubeSpace</span>
+    </a>
+
+    <ul class="nav-ul">
+      <li class="nav-ul-li" > 
+        <a :underline="false" class="nav-ul-li-link" target="_blank" href="https://github.com/kubespace/kubespace">
+          GitHub
+        </a>
+      </li>
+      <li class="nav-ul-li" style="margin-right: 20px;"> 
+        <a :underline="false" class="nav-ul-li-link" href="/docs">
+          文档
+        </a>
+      </li>
+      <!-- <li class="nav-ul-li">
+        <el-link :underline="false" class="nav-ul-li-link">文档</el-link>
+      </li>
+      <li class="nav-ul-li">
+        <el-link :underline="false" class="nav-ul-li-link">联系我们</el-link>
+      </li> -->
+    </ul>
+  </header>
+</div>
+<div class="book" style="height: calc(100% - 50px);">
+<div class="book-summary" style="background-color: white; width: 250px;">
+<!-- <div id="book-search-input" role="search">
+<input type="text" placeholder="Type to search" />
+</div> end of book-search-input -->
+
+<nav role="navigation">
+<ul class="summary" style="padding-left: 20px;">
+<!-- <li>
+<a href="../.." target="_blank" class="custom-link">KubeSpace</a>
+</li> -->
+<!-- <li class="divider"></li> -->
+<li class="chapter" data-path="">
+<a href="../..">安装配置</a>
+<li class="header">最佳实践</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../app/">应用管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../appstore/">应用商店</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../pipeline_build/">最简流水线之构建</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../pipline_deploy.md">最简流水线之部署</a>
+</li>
+
+<li style="margin-left: 20px;" class="active">
+<a href="./">最简流水线之发布</a>
+</li>
+
+<li class="chapter" data-path="cluster/cluster/">
+<a href="../../cluster/cluster/">集群管理</a>
+<li class="header">工作空间</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../workspace/workspace/">空间管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../workspace/apps/">应用管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../workspace/resource/">空间资源</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../workspace/member/">成员管理</a>
+</li>
+
+<li class="header">流水线</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../pipeline/pipeline_space/">流水线空间</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../pipeline/pipeline/">代码流水线</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../pipeline/build/">构建流水线</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../pipeline/resource/">资源管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../pipeline/member/">权限管理</a>
+</li>
+
+<li class="chapter" data-path="appstore/appstore/">
+<a href="../../appstore/appstore/">应用商店</a>
+<li class="header">平台配置</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../platform/secret/">密钥管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../platform/repository/">镜像仓库</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../platform/user/">用户管理</a>
+</li>
+
+<li style="margin-left: 20px;" class="">
+<a href="../../platform/permission/">平台权限</a>
+</li>
+
+<!-- <li class="divider"></li> -->
+
+
+
+<!--<li><a href="http://www.mkdocs.org">-->
+<!--Published with MkDocs-->
+<!--</a></li>-->
+
+<!--<li><a href="https://github.com/GitbookIO/theme-default">-->
+<!--Theme by GitBook-->
+<!--</a></li>-->
+</ul>
+
+</nav>
+
+</div> <!-- end of book-summary -->
+
+<div class="book-body" style="left: 250px;">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="." ></a>
+</h1>
+
+</div> <!-- end of book-header -->
+
+<div class="page-wrapper" tabindex="-1" role="main">
+<div class="page-inner" style="max-width: 850px;">
+<div id="book-search-results">
+<div class="search-noresults">
+
+<section class="normal markdown-section">
+
+
+
+<h1 id="kubespace">KubeSpace最简流水线之发布</h1>
+<p><a href="https://kubespace.cn">KubeSpace</a>是一个DevOps以及Kubernetes多集群管理平台。</p>
+<h2 id="_1">准备</h2>
+<h3 id="git">Git代码仓库</h3>
+<p>现在我们有一个很简单的golang http服务，代码托管在<a href="https://github.com/lzeen/go-app">Github</a>。</p>
+<p>本地启动golang服务，端口为8000：</p>
+<pre><code>go run main.go
+</code></pre>
+<p>请求 <code>/v2/current_time</code> 接口返回当前时间：</p>
+<pre><code>curl http://127.0.0.1:8000/v2/current_time
+HELLO, current time: 2022-05-09 21:49:37
+</code></pre>
+<h3 id="_2">应用</h3>
+<p>在KubeSpace中创建一个「生产环境」的工作空间，绑定「local」集群中的「prod」命名空间。</p>
+<p><img alt="image-20220510212101464" src="../images/release_add_prod_workspace.png" /></p>
+<p>并将「测试环境-1」中的go-app应用克隆到「生产环境」。</p>
+<p><img alt="image-20220510212150597" src="../images/release_clone.png" /></p>
+<p>克隆之后，编辑go-app应用，将service中的NodePort端口改为「30088」。</p>
+<p>在「生产环境」中安装go-app应用，安装后go-app应用当前的镜像为「registry.cn-hangzhou.aliyuncs.com/librrary/go-app:1652103773」。</p>
+<p><img alt="image-20220510212632659" src="../images/release_prod_app.png" /></p>
+<p>此时，go-app应用运行在「生产环境」中，且服务正常。</p>
+<pre><code>curl http://10.240.163.1:30088/v2/current_time
+HELLO, current time: 2022-05-10 13:29:21
+</code></pre>
+<h3 id="_3">主干流水线</h3>
+<p>在KubeSpace平台中有一个go-app的代码空间以及主干流水线。具体可参考<a href="">KubeSpace最简流水线之构建</a>。</p>
+<h2 id="_4">发布</h2>
+<h3 id="_5">编辑主干流水线</h3>
+<p>在go-app代码流水线空间中，对主干流水线进行编辑。</p>
+<p><img alt="image-20220510210903716" src="../images/release_edit_list.png" /></p>
+<p>在主干流水线中，代码库源默认触发分支为「master」，且默认有两个阶段「构建代码镜像」以及「发布」。</p>
+<p>对「构建代码镜像」中的任务进行修改。</p>
+<p><img alt="image-20220510211734321" src="../images/release_edit_job.png" /></p>
+<p>增加阶段「生产环境部署」，并在该阶段下增加「部署go-app」任务。</p>
+<p>其中，任务插件选择「应用部署」，工作空间选择「生产环境」，应用选择「go-app」。</p>
+<p><img alt="image-20220510213353686" src="../images/release_deploy_app.png" /></p>
+<p>确定之后，点击右上角「保存」对主干流水线进行保存。</p>
+<p><img alt="image-20220510214620348" src="../images/release_save_pipeline.png" /></p>
+<h3 id="_6">执行流水线</h3>
+<p>主干流水线编辑完成，进入到主干流水线的构建页面。</p>
+<p><img alt="image-20220510215922890" src="../images/release_build_list.png" /></p>
+<p>点击「构建」按钮，输入「master」分支之后，会自动开始执行主干流水线。</p>
+<p><img alt="image-20220510220156216" src="../images/release_build_exec.png" /></p>
+<p>等「构建代码镜像」执行完成之后，在「发布」阶段会暂停执行，后续阶段需要人工触发执行。</p>
+<p><img alt="image-20220510220318128" src="../images/release_pause.png" /></p>
+<p>点击「发布」阶段中的「执行」按钮，会要求输入本次发布的版本号，默认第一次发布版本号为「1.0.0」。</p>
+<p><img alt="image-20220510220435517" src="../images/release_version.png" /></p>
+<p>我们默认以「1.0.0」做为本次发布的版本号，点击「执行」按钮，会继续开始后续的阶段执行。</p>
+<p><img alt="image-20220510220713222" src="../images/release_continue.png" /></p>
+<p>等待1分钟左右，任务会执行成功。</p>
+<p>查看发布任务的日志，我们可以看到会对当前代码commit id 「83f1fea」打标签，并对构建出来的镜像打「1.0.0」的标签，并推送镜像到仓库。</p>
+<p><img alt="image-20220510221022199" src="../images/release_log.png" /></p>
+<p>发布完成之后，会自动给代码仓库打上发布的版本号。</p>
+<p><img alt="image-20220510222623536" src="../images/release_tag.png" /></p>
+<p>同时，会自动将镜像部署到「生产环境」中的go-app应用。</p>
+<p><img alt="image-20220510222322016" src="../images/release_app_detail.png" /></p>
+<p>检查一下go-app运行是否正常。</p>
+<pre><code>curl http://10.244.0.145:8000/v2/current_time
+HELLO, current time: 2022-05-10 14:27:57
+</code></pre>
+<p>OK，收工！</p>
+<h3 id="_7">交流沟通</h3>
+<p>如果您在使用过程中，有任何问题、建议或功能需求，欢迎随时跟我们交流或提交<a href="https://github.com/kubespace/kubespace/issues">issue</a>。</p>
+<p>可以使用QQ扫描下面二维码，加入我们的QQ交流群。</p>
+<p><img src="/docs/images/qq-qrcode.png" alt="image-20220508162905664" style="zoom:30%;" /></p>
+
+
+</section>
+</div> <!-- end of search-noresults -->
+<div class="search-results">
+<div class="has-results">
+
+<!-- <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1> -->
+<ul class="search-results-list"></ul>
+
+</div> <!-- end of has-results -->
+<div class="no-results">
+
+<!-- <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1> -->
+
+</div> <!-- end of no-results -->
+</div> <!-- end of search-results -->
+</div> <!-- end of book-search-results -->
+
+</div> <!-- end of page-inner -->
+</div> <!-- end of page-wrapper -->
+
+</div> <!-- end of body-inner -->
+
+</div> <!-- end of book-body -->
+<script src="../../js/main.js"></script>
+<script src="../../search/main.js"></script>
+<script src="../../js/gitbook.min.js"></script>
+<script src="../../js/theme.min.js"></script>
+</body>
+</html>

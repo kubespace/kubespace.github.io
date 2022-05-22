@@ -123,4 +123,4 @@ OK，收工！
 
 可以使用QQ扫描下面二维码，加入我们的QQ交流群。
 
-<img src="/Users/tomlee/workspace/gitsource/kubespace.github.io/_mkdocs/docs/practice/images/qq-qrcode.png" alt="image-20220508162905664" style="zoom:30%;" />
+<img src="/docs/images/qq-qrcode.png" alt="image-20220508162905664" style="zoom:30%;" />

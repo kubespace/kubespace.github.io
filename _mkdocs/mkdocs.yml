@@ -4,6 +4,12 @@ theme:
   custom_dir: 'gitbook/'
 nav:
     - 安装配置: index.md
+    - 最佳实践:
+        - 应用管理: practice/app.md
+        - 应用商店: practice/appstore.md
+        - 最简流水线之构建: practice/pipeline_build.md
+        - 最简流水线之部署: practice/pipline_deploy.md
+        - 最简流水线之发布: practice/pipeline_release.md
     - 集群管理: cluster/cluster.md
     - 工作空间: 
         - 空间管理: workspace/workspace.md
