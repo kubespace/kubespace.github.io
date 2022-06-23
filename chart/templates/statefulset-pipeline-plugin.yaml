@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: {{ include "kubespace.fullname" . }}-pipeline-plugin
   namespace: {{ .Release.Namespace }}
@@ -7,6 +7,7 @@ metadata:
     {{- include "kubespace.labels" . | nindent 4 }}
 spec:
   replicas: {{ .Values.pipeline_plugin.replicaCount }}
+  serviceName: {{ include "kubespace.fullname" . }}-pipeline-plugin
   selector:
     matchLabels:
       kubespace-app: kubespace-pipeline-plugin
@@ -53,8 +54,14 @@ spec:
           {{- if .Values.pipeline_plugin.extraEnvs }}
 {{ toYaml .Values.pipeline_plugin.extraEnvs | indent 12 }}
           {{- end }}
-          {{- if .Values.extraVolumeMounts }}
           volumeMounts:
+            - name: data
+              mountPath: /data
+              subPath: pipeline-data
+            - name: data
+              mountPath: /var/lib/containers/storage
+              subPath: podman
+          {{- if .Values.extraVolumeMounts }}
 {{ toYaml .Values.extraVolumeMounts | indent 12 }}
           {{- end }}
 #          livenessProbe:
@@ -67,10 +74,6 @@ spec:
 #              port: http
           resources:
             {{- toYaml .Values.pipeline_plugin.resources | nindent 12 }}
-      {{- if .Values.extraVolumes }}
-      volumes:
-{{ toYaml .Values.extraVolumes | indent 8 }}
-      {{- end }}
       {{- with .Values.pipeline_plugin.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -83,6 +86,34 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      volumes:
+      {{- if .Values.extraVolumes }}
+{{ toYaml .Values.extraVolumes | indent 8 }}
+      {{- end }}
+  {{- if not .Values.pipeline_plugin.persistence.enabled }}
+        - name: data
+          hostPath:
+            path: {{ .Values.pipeline_plugin.persistence.hostPath }}
+            type: DirectoryOrCreate
+  {{- else }}
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+        labels:
+          app.kubernetes.io/component: kubespace-pipeline-plugin
+        {{- if .Values.pipeline_plugin.persistence.annotations }}
+        annotations: {{- toYaml .Values.pipeline_plugin.persistence.annotations | nindent 10 }}
+        {{- end }}
+      spec:
+        accessModes:
+        {{- range .Values.pipeline_plugin.persistence.accessModes }}
+          - {{ . | quote }}
+        {{- end }}
+        resources:
+          requests:
+            storage: {{ .Values.pipeline_plugin.persistence.size | quote }}
+        storageClassName: {{ .Values.pipeline_plugin.persistence.storageClass }}
+  {{- end }}
 
 ---
 

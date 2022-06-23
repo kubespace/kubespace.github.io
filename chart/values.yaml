@@ -14,7 +14,7 @@ kubespace:
     repository: registry.cn-hangzhou.aliyuncs.com/kubespace/kubespace
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: "1.0.12"
+    tag: "1.0.13"
   imagePullSecrets: []
   service:
     type: NodePort
@@ -57,7 +57,7 @@ pipeline_plugin:
     repository: registry.cn-hangzhou.aliyuncs.com/kubespace/pipeline-plugin
     pullPolicy: IfNotPresent
     # Overrides the image tag whose default is the chart appVersion.
-    tag: "1.0.0"
+    tag: "1.0.1"
   imagePullSecrets: []
   service:
     type: ClusterIP
@@ -74,6 +74,13 @@ pipeline_plugin:
   nodeSelector: {}
   tolerations: []
   affinity: {}
+  persistence:
+    enabled: true
+    storageClass: "local-path"
+    accessModes:
+      - ReadWriteOnce
+    size: 8Gi
+    hostPath: "/data/kubespace"
 
 agent:
   image:
