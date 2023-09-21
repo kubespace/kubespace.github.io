@@ -1,6 +1,17 @@
 apiVersion: v1
 entries:
   kubespace:
+    - created: 2023-09-21T09:03:07.710316+08:00
+      description: KubeSpace DevOps Kubernetes Management Platfrom
+      digest: 99c76e403d752c84ead610644d4b1c2f2b453a74b921f422b9dcb8a7c8b559cd
+      home: https://kubespace.cn
+      name: kubespace
+      sources:
+      - https://github.com/kubespace/kubespace
+      urls:
+      - https://gitee.com/kubespacee/kubespace/releases/download/1.2.7/kubespace-1.2.7.tgz
+      version: 1.2.7
+      appVersion: 1.2.7
     - created: 2023-08-25T10:11:07.710316+08:00
       description: KubeSpace DevOps Kubernetes Management Platfrom
       digest: 99c76e403d752c84ead610644d4b1c2f2b453a74b921f422b9dcb8a7c8b559cd
